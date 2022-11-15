@@ -11,7 +11,7 @@ buttonStart.addEventListener('click', startColor);
 
 function startColor() {
   console.log(buttonStart);
-  idSet = setInterval(() => {
+  const idSet = setInterval(() => {
     function getRandomHexColor() {
       return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
     }
