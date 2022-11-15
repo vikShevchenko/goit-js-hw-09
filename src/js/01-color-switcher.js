@@ -1,10 +1,11 @@
+
 const buttonStart = document.querySelector('[data-start]');
 const buttonStop = document.querySelector('[data-stop]');
 const background = document.querySelector('body');
 
 //==============================================================
 
-buttonStop.setAttribute('disabled', '');
+buttonStop.setAttribute('disabled', true);
 
 buttonStart.addEventListener('click', startColor);
 
@@ -18,8 +19,8 @@ function startColor() {
     background.style.backgroundColor = getRandomHexColor();
   }, 1000);
 
-  buttonStart.setAttribute('disabled', '');
-  buttonStop.removeAttribute('disabled', '');
+  buttonStart.setAttribute('disabled', true);
+  buttonStop.removeAttribute('disabled', true);
 }
 //================================================================
 
@@ -29,6 +30,6 @@ function stopColor() {
   console.log(buttonStop);
   clearInterval(idSet);
 
-  buttonStart.removeAttribute('disabled', '');
-  buttonStop.setAttribute('disabled', '');
+  buttonStart.removeAttribute('disabled', true);
+  buttonStop.setAttribute('disabled', true);
 }
