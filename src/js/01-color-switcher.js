@@ -10,7 +10,7 @@ buttonStop.setAttribute('disabled', true);
 buttonStart.addEventListener('click', startColor);
 
 function startColor() {
-  console.log(buttonStart);
+  
   const idSet = setInterval(() => {
     function getRandomHexColor() {
       return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -21,15 +21,20 @@ function startColor() {
 
   buttonStart.setAttribute('disabled', true);
   buttonStop.removeAttribute('disabled', true);
+  
+  buttonStop.addEventListener('click', stopColor);
+
+  function stopColor() {
+  
+    clearInterval(idSet);
+  
+    buttonStart.removeAttribute('disabled', true);
+    buttonStop.setAttribute('disabled', true);
+  }
+
 }
 //================================================================
 
-buttonStop.addEventListener('click', stopColor);
 
-function stopColor() {
-  console.log(buttonStop);
-  clearInterval(idSet);
 
-  buttonStart.removeAttribute('disabled', true);
-  buttonStop.setAttribute('disabled', true);
-}
+
